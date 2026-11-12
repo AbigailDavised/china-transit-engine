@@ -15,6 +15,20 @@ const entries = [
     title: 'China 240-Hour Transit Without Visa (TWOV) Calculator — HF Static Space',
     language: 'en',
   },
+  {
+    canonical_domain: 'deps.dev',
+    channel: 'ecosystem_parasite',
+    entry_url: 'https://deps.dev/npm/china-transit-engine',
+    title: 'china-transit-engine on Google deps.dev (Dofollow homepage -> checkchinatransit.com)',
+    language: 'en',
+  },
+  {
+    canonical_domain: 'npmjs.com',
+    channel: 'ecosystem_parasite',
+    entry_url: 'https://www.npmjs.com/package/china-transit-engine',
+    title: 'china-transit-engine@1.0.0 on npm Registry',
+    language: 'en',
+  },
 ];
 
 const stmt = db.prepare(`
