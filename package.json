@@ -1,0 +1,61 @@
+{
+  "name": "china-transit-engine",
+  "version": "1.0.0",
+  "description": "Zero-dependency China 240-hour / 144-hour Transit Without Visa (TWOV) eligibility evaluator, port corridor validator, and NIA midnight clock calculator.",
+  "type": "module",
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "homepage": "https://checkchinatransit.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbigailDavised/china-transit-engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AbigailDavised/china-transit-engine/issues"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://checkchinatransit.com/about"
+  },
+  "keywords": [
+    "china-transit",
+    "twov",
+    "240-hour-transit",
+    "china-visa-free",
+    "travel-compliance",
+    "immigration-calculator"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build:esm": "tsc -p tsconfig.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json && node scripts/fix-cjs.mjs",
+    "build": "npm run build:esm && npm run build:cjs",
+    "test": "npm run build && node --test test/*.test.ts",
+    "prepublishOnly": "npm test"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0"
+  }
+}
