@@ -1,6 +1,6 @@
 {
   "name": "china-transit-engine",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Zero-dependency China 240-hour / 144-hour Transit Without Visa (TWOV) eligibility evaluator, port corridor validator, and NIA midnight clock calculator.",
   "type": "module",
   "main": "./dist/cjs/index.cjs",
