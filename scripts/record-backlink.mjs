@@ -43,6 +43,13 @@ const entries = [
     title: '2026–2027 China 240-Hour TWOV 60-Port & 56-Country Cheat Sheet Gist',
     language: 'en',
   },
+  {
+    canonical_domain: 'kaggle.com',
+    channel: 'ecosystem_parasite',
+    entry_url: 'https://www.kaggle.com/datasets/sotomo/china-240h-visa-free-transit-ports-2026-2027',
+    title: 'China 240h Visa-Free Transit Ports & Countries Dataset (2026–2027) — Kaggle',
+    language: 'en',
+  },
 ];
 
 const stmt = db.prepare(`
