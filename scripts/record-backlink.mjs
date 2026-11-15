@@ -26,7 +26,21 @@ const entries = [
     canonical_domain: 'npmjs.com',
     channel: 'ecosystem_parasite',
     entry_url: 'https://www.npmjs.com/package/china-transit-engine',
-    title: 'china-transit-engine@1.0.0 on npm Registry',
+    title: 'china-transit-engine@1.0.1 on npm Registry',
+    language: 'en',
+  },
+  {
+    canonical_domain: 'github.io',
+    channel: 'ecosystem_parasite',
+    entry_url: 'https://abigaildavised.github.io/china-transit-engine/',
+    title: 'China 240-Hour TWOV & Visa-Free Calculator — GitHub Pages',
+    language: 'en',
+  },
+  {
+    canonical_domain: 'gist.github.com',
+    channel: 'ecosystem_parasite',
+    entry_url: 'https://gist.github.com/AbigailDavised/c092056c24be0047dde3f4291c2c26b4',
+    title: '2026–2027 China 240-Hour TWOV 60-Port & 56-Country Cheat Sheet Gist',
     language: 'en',
   },
 ];
