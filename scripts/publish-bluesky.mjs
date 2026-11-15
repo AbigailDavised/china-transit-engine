@@ -38,12 +38,18 @@ async function main() {
   const session = await authRes.json();
   console.log(`[Bluesky] Logged in as ${session.handle} (${session.did})`);
 
-  // 2. Upload OG preview thumbnail for link card (best-effort)
+  // 2. Upload Launch Kit v3.0 cover.png thumbnail (fallback to remote og-preview.png)
+  const LOCAL_COVER = 'E:/Soft/misc/backlink-pipeline/site-assets/checkchinatransit.com/cover.png';
   let thumbBlob = undefined;
   try {
-    const imgRes = await fetch('https://checkchinatransit.com/og-preview.png');
-    if (imgRes.ok) {
-      const imgBuf = Buffer.from(await imgRes.arrayBuffer());
+    let imgBuf = null;
+    if (fs.existsSync(LOCAL_COVER)) {
+      imgBuf = fs.readFileSync(LOCAL_COVER);
+    } else {
+      const imgRes = await fetch('https://checkchinatransit.com/og-preview.png');
+      if (imgRes.ok) imgBuf = Buffer.from(await imgRes.arrayBuffer());
+    }
+    if (imgBuf) {
       const upRes = await fetch(`${BASE}/xrpc/com.atproto.repo.uploadBlob`, {
         method: 'POST',
         headers: {
@@ -55,7 +61,7 @@ async function main() {
       if (upRes.ok) {
         const upData = await upRes.json();
         thumbBlob = upData.blob;
-        console.log('[Bluesky] Uploaded OG card thumbnail blob.');
+        console.log('[Bluesky] Uploaded cover.png thumbnail blob.');
       }
     }
   } catch (e) {
