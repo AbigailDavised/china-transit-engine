@@ -50,6 +50,13 @@ const entries = [
     title: 'China 240h Visa-Free Transit Ports & Countries Dataset (2026–2027) — Kaggle',
     language: 'en',
   },
+  {
+    canonical_domain: 'bsky.app',
+    channel: 'ecosystem_parasite',
+    entry_url: 'https://bsky.app/profile/abigail-davised.bsky.social/post/3n2ddbyfkih2n',
+    title: 'CheckChinaTransit 2026–2027 TWOV Engine & Dataset Announcement — Bluesky',
+    language: 'en',
+  },
 ];
 
 const stmt = db.prepare(`
