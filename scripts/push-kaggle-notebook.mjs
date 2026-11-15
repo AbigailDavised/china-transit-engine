@@ -5,7 +5,7 @@ const { username, key } = JSON.parse(fs.readFileSync(KEY_PATH, 'utf8'));
 const authHeader = 'Basic ' + Buffer.from(`${username}:${key}`).toString('base64');
 
 const DATASET_REF = `${username}/china-240h-visa-free-transit-ports-2026-2027`;
-const KERNEL_SLUG = `${username}/china-240h-twov-ports-eda-2026-2027`;
+const KERNEL_SLUG = `${username}/china-240h-visa-free-transit-eda-2026-2027`;
 
 const notebook = {
   nbformat: 4,
@@ -32,11 +32,12 @@ const notebook = {
       metadata: {},
       outputs: [],
       source: [
+        'from pathlib import Path\n',
         'import pandas as pd\n',
         'import matplotlib.pyplot as plt\n\n',
-        'BASE = "/kaggle/input/china-240h-visa-free-transit-ports-2026-2027"\n',
-        'countries = pd.read_csv(f"{BASE}/china_twov_countries_56.csv")\n',
-        'ports = pd.read_csv(f"{BASE}/china_twov_ports_60.csv")\n\n',
+        'BASE = next(Path("/kaggle/input").rglob("china_twov_countries_56.csv")).parent\n',
+        'countries = pd.read_csv(BASE / "china_twov_countries_56.csv")\n',
+        'ports = pd.read_csv(BASE / "china_twov_ports_60.csv")\n\n',
         'print(f"Loaded {len(countries)} country rules and {len(ports)} open ports.")\n',
         'display(countries["visa_category"].value_counts().to_frame("country_count"))\n',
         'display(ports["type"].value_counts().to_frame("port_count"))\n',
@@ -78,7 +79,7 @@ const notebook = {
 async function main() {
   const payload = {
     slug: KERNEL_SLUG,
-    newTitle: 'China 240h TWOV Ports & Visa-Free EDA (2026–2027)',
+    newTitle: 'China 240h Visa-Free Transit EDA (2026–2027)',
     text: JSON.stringify(notebook),
     language: 'python',
     kernelType: 'notebook',

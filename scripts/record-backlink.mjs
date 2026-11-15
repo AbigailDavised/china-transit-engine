@@ -57,6 +57,13 @@ const entries = [
     title: 'CheckChinaTransit 2026–2027 TWOV Engine & Dataset Announcement — Bluesky',
     language: 'en',
   },
+  {
+    canonical_domain: 'kaggle.com',
+    channel: 'ecosystem_parasite',
+    entry_url: 'https://www.kaggle.com/code/sotomo/china-240h-visa-free-transit-eda-2026-2027',
+    title: 'China 240h Visa-Free Transit EDA (2026–2027) — Kaggle Notebook',
+    language: 'en',
+  },
 ];
 
 const stmt = db.prepare(`
